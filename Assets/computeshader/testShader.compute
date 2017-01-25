@@ -11,6 +11,7 @@ void CSMain(uint3 id : SV_DispatchThreadID)
 	//纯红色
 	//Result[id.xy] = float4(1,0,0,1);
 	//基于uv的x给颜色
-	float v = id.x / 256.0f;
-	Result[id.xy] = float4(v, 0, 0, 1);
+	float u = id.x / 256.0f;
+	float v = id.y / 256.0f;
+	Result[id.xy] = float4(u, 0, v, 1);
 }
